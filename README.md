@@ -6,7 +6,7 @@ Please create a folder with your name inside any homework folder and commit your
 
 The homeworks must be commited before the next lesson.
 
-Please commit your homework when it is complete, because it will become visible and otherw will start to comment on it.
+Please commit your homework when it is complete, because it will become visible and others will start to comment on it.
 
 
 
