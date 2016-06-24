@@ -1,4 +1,4 @@
-# softuni-kpk
+# Course: High quality code
 
 Please download homework assignments and materials from the subfolders.
 
