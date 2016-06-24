@@ -16,7 +16,7 @@ namespace League\CLImate\Settings;
       if (!array_key_exists($name, $this->settings)) {
         $this->settings[$key] = new $setting();
       }
-      
+
       $this->settings[$key]->add($value);
     }
 

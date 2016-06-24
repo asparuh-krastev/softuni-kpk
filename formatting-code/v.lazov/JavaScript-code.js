@@ -56,13 +56,16 @@ function PopTip() {
     if (theLayer) {
       pX = event.x - 5;
       pY = event.y;
+
       if (addScroll) {
         pX = pX + document.body.scrollLeft;
         pY = pY + document.body.scrollTop;
       }
+
       if ((pX + 120) > document.body.clientWidth) {
         pX = pX - 150;
       }
+
       theLayer.style.pixelLeft = pX + 10;
       theLayer.style.pixelTop = pY + 15;
       theLayer.style.visibility = 'visible';
@@ -72,6 +75,7 @@ function PopTip() {
 
 function HideTip() {
   args = HideTip.arguments;
+  
   if (b == "Netscape") {
     document.layers['ToolTip'].visibility = 'hide';
   }
