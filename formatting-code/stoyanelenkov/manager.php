@@ -4,6 +4,14 @@ namespace League\CLImate\Settings;
 class Manager {
 	protected $settings = array();
 	
+	protected function get_path( $name ) {
+		return '\\League\CLImate\\Settings\\' . $this->get_class_name( $name );
+	}
+
+	protected function get_class_name( $name ) {
+		return ucwords( str_replace( 'add_', '', $name ) );
+	}
+	
 	public function	exists( $name ) {
 		return class_exists( $this->get_path( $name ) );
 	}
@@ -25,14 +33,6 @@ class Manager {
 		}
 
 		return false;
-	}
-
-	protected function get_path( $name ) {
-		return '\\League\CLImate\\Settings\\' . $this->get_class_name( $name );
-	}
-
-	protected function get_class_name( $name ) {
-		return ucwords( str_replace( 'add_', '', $name ) );
 	}
 
 	public function settings() {
