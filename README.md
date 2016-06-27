@@ -5,6 +5,7 @@
   - Create a **new branch** for your homework.
   - Create a **folder with your name** inside the homework folder and commit your homework.
   - Once the homework is commited, create a pull request.
+  - Your pull request should be entitled as follows: **{Your name} - {Lecture title}** or somethilg like this.
 
 The homeworks must be commited before the next lesson.
 
