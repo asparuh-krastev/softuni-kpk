@@ -48,7 +48,7 @@ class Ranking {
 }
 
 /**
- * 
+ *
  */
 function main() {
   $command = '';
@@ -188,22 +188,22 @@ function main() {
  * @param array $rankingItems - An array of objects of type Ranking.
  */
 function ranking($rankingItems) {
-  echo ("\n");
-  echo ("Ranking");
-  echo ("\n");
+  echo("\n");
+  echo("Ranking");
+  echo("\n");
 
   if (count($rankingItems) > 0) {
     for ($i = 0; $i < count($rankingItems); $i++) {
       $rank = $i + 1;
       $player = $rankingItems[$i]->getName();
       $points = $rankingItems[$i]->getPoints();
-      echo ("{$rank}. {$player} --> {$points} boxes");
+      echo("{$rank}. {$player} --> {$points} boxes");
     }
 
-    echo ("\n");
+    echo("\n");
   }
   else {
-      echo ("Empty ranking!\n");
+    echo("Empty ranking!\n");
   }
 }
 
@@ -216,9 +216,9 @@ function ranking($rankingItems) {
  * @param int $column
  */
 function take_turn(&$field, &$bombs, $row, $column) {
-    $bombNumber = kolko($bombs, $row, $column);
-    $bombs[$row][$column] = $bombNumber;
-    $field[$row][$column] = $bombNumber;
+  $bombNumber = kolko($bombs, $row, $column);
+  $bombs[$row][$column] = $bombNumber;
+  $field[$row][$column] = $bombNumber;
 }
 
 /**
@@ -228,21 +228,21 @@ function draw_board($board) {
   $height = count($board);
   $length = count($board[0]);
 
-  echo ("\n");
-  echo ("    0 1 2 3 4 5 6 7 8 9");
-  echo ("   ---------------------");
+  echo("\n");
+  echo("    0 1 2 3 4 5 6 7 8 9");
+  echo("   ---------------------");
 
   for ($i = 0; $i < $length; $i++) {
-    echo ("{$i} | ");
+    echo("{$i} | ");
     for ($j = 0; $j < $height; $j++) {
-      echo ("{$board[$i][$j]} ");
+      echo("{$board[$i][$j]} ");
     }
 
-    echo ("|\n");
+    echo("|\n");
   }
 
-  echo ("   ---------------------");
-  echo ("\n");
+  echo("   ---------------------");
+  echo("\n");
 }
 
 /**
@@ -255,7 +255,7 @@ function assemble_board() {
   $board = [];
 
   for ($i = 0; $i < $boardRows; $i++) {
-    for ($j = 0; $j < $boardColumns; $j++){
+    for ($j = 0; $j < $boardColumns; $j++) {
       $board[$i][$j] = '?';
     }
   }
