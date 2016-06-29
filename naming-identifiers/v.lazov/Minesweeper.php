@@ -149,7 +149,7 @@ function Main() {
 
       //shampion4eta.Sort((zaKlasiraneto r1, zaKlasiraneto r2) => r2.igra4.CompareTo(r1.igra4));
       //shampion4eta.Sort((zaKlasiraneto r1, zaKlasiraneto r2) => r2.kolko.CompareTo(r1.kolko));
-      
+
       ranking($champions);
 
       $board = assemble_board();
@@ -175,6 +175,9 @@ function Main() {
       $start_flag = TRUE;
     }
   } while ($command != "exit");
+
+  // User generated input for the command
+  // Console.ReadLine();
 }
 
 /**
