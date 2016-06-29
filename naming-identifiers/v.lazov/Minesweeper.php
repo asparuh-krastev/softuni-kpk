@@ -47,8 +47,10 @@ class Ranking {
   }
 }
 
-
-function Main() {
+/**
+ * 
+ */
+function main() {
   $command = '';
   $board = assemble_board();
   $bombs = place_bombs();
