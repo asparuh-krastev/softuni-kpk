@@ -106,4 +106,4 @@ function ShowMenu2() {
         theLayer = eval('document.all[\'menu2\']');
         theLayer.style.visibility = 'visible';
     }
-} // fostata
+}
