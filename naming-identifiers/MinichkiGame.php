@@ -23,7 +23,7 @@ class PlayMinichkiGame
         $this->points;
     }
 
-    public function getName {
+    public function getName() {
         return $this->name;
     }
 
@@ -38,7 +38,7 @@ class PlayMinichkiGame
         $this->name = $newName;
     }
 
-    public function getPoints {
+    public function getPoints() {
         return $this->points;
     }
 
