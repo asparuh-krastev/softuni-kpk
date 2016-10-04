@@ -1,0 +1,1 @@
+Write PHP documentation for all the necessary parts of your improved "Mini4ki" file.
