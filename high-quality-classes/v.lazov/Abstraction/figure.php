@@ -1,19 +1,26 @@
 ﻿<?php
 
+/**
+ * Class Figure
+ *
+ * An abstraction of a figure.
+ */
 abstract class Figure {
-	public virtual $width;
-	public virtual $height;
-	public virtual $radius
+	public $width;
+	public $height;
+	public $radius;
 
-	/* check for constructor overloading */
-	public Figure() {}
+  /**
+   * A method for calculating the perimeter of the figure.
+   *
+   * @return mixed
+   */
+  public abstract function calculate_perimeter();
 
-	public Figure($radius) {
-		$this->$radius = $radius;
-	}
-
-	public Figure($width, $height) {
-		$this->width = $width;
-		$this->height = $height;
-	}
+  /**
+   * A method for calculating the surface of the figure.
+   *
+   * @return mixed
+   */
+  public abstract function calculate_surface();
 }

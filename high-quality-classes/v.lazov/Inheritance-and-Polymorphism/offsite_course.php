@@ -1,65 +1,45 @@
 ﻿<?php
 
-class OffsiteCourse {
-	public string Name { get; set; }
-	public string TeacherName { get; set; }
-	public IList<string> Students { get; set; }
-	public string Town { get; set; }
+include "course.php";
 
-	public OffsiteCourse(string name)
-	{
-		this.Name = name;
-		this.TeacherName = null;
-		this.Students = new List<string>();
-		this.Town = null;
-	}
+/**
+ * Class OffsiteCourse
+ */
+class OffsiteCourse extends Course {
+  /**
+   * Town
+   *
+   * @var null
+   */
+  public $town = null;
 
-	public OffsiteCourse(string courseName, string teacherName)
-	{
-		this.Name = courseName;
-		this.TeacherName = teacherName;
-		this.Students = new List<string>();
-		this.Town = null;
-	}
+  public function __construct($course_name = '', $teacher_name = '', $students = []) {
+    parent::__consatruct($course_name, $teacher_name, $students);
+    $this->Lab = null;
+  }
 
-	public OffsiteCourse(string courseName, string teacherName, IList<string> students)
-	{
-		this.Name = courseName;
-		this.TeacherName = teacherName;
-		this.Students = students;
-		this.Town = null;
-	}
+  /**
+   * Returns the OffsiteCourse object as a string representation.
+   *
+   * @return string
+   */
+  public function to_string() {
+    $result = '';
+    $result .= "OffsiteCourse { Name = {$this->name}";
 
-	private string GetStudentsAsString()
-	{
-		if (this.Students == null || this.Students.Count == 0)
-		{
-			return "{ }";
-		}
-		else
-		{
-			return "{ " + string.Join(", ", this.Students) + " }";
-		}
-	}
+    if ($this->teacher_name != null) {
+      $result .= "; Teacher = ";
+      $result .= $this->teacher_name;
+    }
 
-	public override string ToString()
-	{
-		StringBuilder result = new StringBuilder();
-		result.Append("OffsiteCourse { Name = ");
-		result.Append(this.Name);
-		if (this.TeacherName != null)
-		{
-			result.Append("; Teacher = ");
-			result.Append(this.TeacherName);
-		}
-		result.Append("; Students = ");
-		result.Append(this.GetStudentsAsString());
-		if (this.Town != null)
-		{
-			result.Append("; Town = ");
-			result.Append(this.Town);
-		}
-		result.Append(" }");
-		return result.ToString();
-	}
+    $result .= "; Students = ";
+    $this->get_students_as_string();
+    if ($this->town != null) {
+      $result .= "; Town = ";
+      $result .= $this->town;
+    }
+
+    $result .= " }";
+    return $result;
+  }
 }

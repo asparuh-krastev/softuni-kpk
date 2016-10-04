@@ -1,5 +1,7 @@
 ﻿<?php
 
+include "utils.php";
+
 echo Utils::get_file_extension("example");
 echo Utils::get_file_extension("example.pdf");
 echo Utils::get_file_extension("example.new.pdf");
@@ -8,11 +10,11 @@ echo Utils::get_file_name_without_extension("example");
 echo Utils::get_file_name_without_extension("example.pdf");
 echo Utils::get_file_name_without_extension("example.new.pdf");
 
-$2d_distance = Utils::calc_distance_2d(1, -2, 3, 4);
-echo "Distance in the 2D space = {$2d_distance}"l
+$two_d_distance = Utils::calc_distance_2d(1, -2, 3, 4);
+echo "Distance in the 2D space = {$two_d_distance}";
 
-$3d_distance = Utils::calc_distance_3d(5, 2, -1, 3, -6, 4);
-echo "Distance in the 3D space = {$3d_distance}";
+$three_d_distance = Utils::calc_distance_3d(5, 2, -1, 3, -6, 4);
+echo "Distance in the 3D space = {$three_d_distance}";
 
 $width = 3;
 $height = 4;
@@ -21,7 +23,7 @@ $volume = Utils::calc_volume_parallelogram($width, $height, $depth);
 echo "Volume = {$volume}";
 
 $xyz = Utils::calc_volume_parallelogram($width, $height, $depth);
-echo "Diagonal XYZ = {0:f2}", Utils.CalcDiagonalXYZ());
+echo "Diagonal XYZ = {$xyz}";
 
 $xy = Utils::calc_diagonal_xy($width, $height);
 echo "Diagonal XY = {$xy}";

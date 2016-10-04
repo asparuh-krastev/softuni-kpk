@@ -2,15 +2,31 @@
 
 include "figure.php";
 
+/**
+ * Class Rectangle
+ */
 class Rectangle extends Figure {
-	public Rectangle($width = 0, $height = 0){
+
+	public function __construct($width = 0, $height = 0){
+		$this->width = $width;
+		$this->height = $height;
 	}
 
-	public calculate_perimeter() {
-		return perimeter = 2 * ($width + $height);
+	/**
+	 * @inheritdoc
+	 *
+	 * @return int
+	 */
+	public function calculate_perimeter() {
+		return 2 * ($this->width + $this->height);
 	}
 
-	public calculate_surface() {
-		return surface = $width * $height;
+	/**
+	 * @inheritdoc
+	 *
+	 * @return int
+	 */
+	public function calculate_surface() {
+		return $this->width * $this->height;
 	}
 }

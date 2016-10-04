@@ -1,6 +1,6 @@
 ﻿<?php
 
-include "rectagnle.php";
+include "rectangle.php";
 include "circle.php";
 
 $circle = new Circle(5);

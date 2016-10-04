@@ -1,19 +1,25 @@
 ﻿<?php
 
-LocalCourse localCourse = new LocalCourse("Databases");
-Console.WriteLine(localCourse);
+include "local_course.php";
+include "offsite_course.php";
 
-localCourse.Lab = "Enterprise";
-Console.WriteLine(localCourse);
+$local_course = new LocalCourse("Databases");
+echo $local_course->toString();
 
-localCourse.Students = new List<string>() { "Peter", "Maria" };
-Console.WriteLine(localCourse);
+$local_course->lab = "Enterprise";
+echo $local_course->toString();
 
-localCourse.TeacherName = "Svetlin Nakov";
-localCourse.Students.Add("Milena");
-localCourse.Students.Add("Todor");
-Console.WriteLine(localCourse);
+$local_course->students = ["Peter", "Maria"];
+echo $local_course->toString();
 
-OffsiteCourse offsiteCourse = new OffsiteCourse("PHP and WordPress Development", "Mario Peshev", 
-new List<string>() { "Thomas", "Ani", "Steve" });
+$local_course->teacher_name = "Svetlin Nakov";
+$local_course->addStudent("Milena");
+$local_course->addStudent("Todor");
+echo $local_course->toString();
 
+$offsite_course = new OffsiteCourse(
+  "PHP and WordPress Development",
+  "Mario Peshev",
+  [ "Thomas", "Ani", "Steve" ]
+);
+echo $offsite_course->toString();
