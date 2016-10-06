@@ -50,7 +50,7 @@ class LinkedListTest extends TestCase {
     $node = $list->find(self::NODE_DATA_BASE . $id);
 
     // Assert
-    $this->assertEquals($node->readNode(), self::NODE_DATA_BASE . $id, "Node data does not match");
+    $this->assertEquals($node->readNode(), self::NODE_DATA_BASE . $id, "Node data does not match.");
 
     // Act
     $node = $list->find("DICK!");
@@ -71,7 +71,7 @@ class LinkedListTest extends TestCase {
     $node_data = $list->readNode($id);
 
     // Assert
-    $this->assertEquals($node_data, self::NODE_DATA_BASE . ($id - 1), "Node data does not match");
+    $this->assertEquals($node_data, self::NODE_DATA_BASE . ($id - 1), "Node data does not match.");
 
     // Act
     $id = "text";
@@ -90,7 +90,7 @@ class LinkedListTest extends TestCase {
 
     // Assert
     for($j = 0; $j < $i; $j++) {
-      $this->assertContains(self::NODE_DATA_BASE . $j, $list_data);
+      $this->assertContains(self::NODE_DATA_BASE . $j, $list_data, "List data does not match.");
     }
   }
 
@@ -104,7 +104,7 @@ class LinkedListTest extends TestCase {
     $node_text = $list->readNode(1);
 
     // Assert
-    $this->assertEquals($node_text, $data);
+    $this->assertEquals($node_text, $data, "Node data does not match the fist node.");
   }
 
   public function testInsertLast() {
@@ -118,7 +118,7 @@ class LinkedListTest extends TestCase {
     $node_text = $list->readNode($id + 1);
 
     // Assert
-    $this->assertEquals($node_text, $data);
+    $this->assertEquals($node_text, $data, "Node data does not match th elast node.");
   }
 
   public function testDeleteFirst() {
@@ -132,7 +132,8 @@ class LinkedListTest extends TestCase {
     $node_text = $list->readNode($id);
 
     //Assert
-    $this->assertEquals($node_text, self::NODE_DATA_BASE . $id);
+    $this->assertEquals($node_text, self::NODE_DATA_BASE . $id,
+      "deleteFirstItem failed. Node data does not match the first node.");
   }
 
   public function testDeleteLast() {
@@ -145,7 +146,8 @@ class LinkedListTest extends TestCase {
     $node_text = $list->readNode($list->totalNodes());
 
     //Assert
-    $this->assertEquals($node_text, self::NODE_DATA_BASE . ($id - 2));
+    $this->assertEquals($node_text, self::NODE_DATA_BASE . ($id - 2),
+      "deleteLast failed. Node data does not match the last node.");
   }
 
   /**
@@ -162,7 +164,7 @@ class LinkedListTest extends TestCase {
     $node_text = $list->readNode($id);
 
     // Assert
-    $this->assertEquals($node_text, self::NODE_DATA_BASE . $id);
+    $this->assertEquals($node_text, self::NODE_DATA_BASE . $id, "deleteNode failed. Next node data does not match.");
 
     $list->deleteNode("DICK!");
   }
@@ -180,7 +182,7 @@ class LinkedListTest extends TestCase {
     for($i = 0; $i < $id; $i++) {
       $element_data = (9) - $i;
       $element_data = self::NODE_DATA_BASE . $element_data;
-      $this->assertEquals($list_data[$i], $element_data);
+      $this->assertEquals($list_data[$i], $element_data, "Reversed list data does not match.");
     }
   }
 }
