@@ -1,5 +1,7 @@
 <?php
 
+include "Exceptions.php";
+
 /**
  * Title: Single linked list
  * Description: Implementation of a single linked list in PHP
@@ -128,7 +130,7 @@ class LinkedList
 
     while ($current->data != $key) {
       if ($current->next == NULL) {
-        return NULL;
+        throw new InvalidNodeIndexException();
       } else {
         $previous = $current;
         $current = $current->next;
@@ -155,7 +157,7 @@ class LinkedList
     $current = $this->firstNode;
     while ($current->data != $key) {
       if ($current->next == NULL) {
-        return NULL;
+        throw new NodeNotFoundException();
       } else {
         $current = $current->next;
       }
@@ -172,7 +174,7 @@ class LinkedList
       $pos = 1;
       while ($pos != $nodePos) {
         if ($current->next == NULL) {
-          return NULL;
+          throw new InvalidNodeIndexException();
         } else {
           $current = $current->next;
         }
@@ -182,7 +184,7 @@ class LinkedList
 
       return $current->data;
     } else {
-      return NULL;
+      throw new InvalidNodeIndexException();
     }
   }
 

@@ -36,6 +36,9 @@ class LinkedListTest extends TestCase {
     $this->assertEquals($i, $list->totalNodes(), "The count does not match");
   }
 
+  /**
+   * @expectedException NodeNotFoundException
+   */
   public function testFind(){
     // Arrange
     $id = 10;
@@ -43,12 +46,21 @@ class LinkedListTest extends TestCase {
 
     // Act
     $id = 5;
+    // Check for existing text
     $node = $list->find(self::NODE_DATA_BASE . $id);
 
     // Assert
     $this->assertEquals($node->readNode(), self::NODE_DATA_BASE . $id, "Node data does not match");
+
+    // Act
+    $node = $list->find("DICK!");
+
+    // Assert is in the annotation.
   }
 
+  /**
+   * @expectedException InvalidNodeIndexException
+   */
   public function testReadNode() {
     // Arrange
     $i = 10;
@@ -65,9 +77,7 @@ class LinkedListTest extends TestCase {
     $id = "text";
     $node_data = $list->readNode($id);
 
-    // Assert
-    $this->assertNULL($node_data, "Node data in not null");
-
+    // Assert is in the annotation
   }
 
   public function testReadList() {
@@ -138,6 +148,9 @@ class LinkedListTest extends TestCase {
     $this->assertEquals($node_text, self::NODE_DATA_BASE . ($id - 2));
   }
 
+  /**
+   * @expectedException InvalidNodeIndexException
+   */
   public function testDeleteNode() {
     // Arrange
     $id = 10;
@@ -150,6 +163,8 @@ class LinkedListTest extends TestCase {
 
     // Assert
     $this->assertEquals($node_text, self::NODE_DATA_BASE . $id);
+
+    $list->deleteNode("DICK!");
   }
 
   public function testReverseList() {
